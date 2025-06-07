@@ -1,0 +1,6 @@
+# Ignore environment files containing secrets
+.env
+# Node dependencies (if Node used later)
+node_modules/
+# Logs
+*.log
