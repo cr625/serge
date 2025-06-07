@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber Surge Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <span class="uber-logo">🚗</span>
+                    Surge Tracker
+                </h1>
+                <div class="location-info">
+                    <div class="location-status" id="locationStatus">
+                        <span class="status-indicator" id="statusIndicator">📍</span>
+                        <span id="locationText">Detecting location...</span>
+                    </div>
+                    <div class="coordinates" id="coordinates"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Controls -->
+            <div class="controls">
+                <button class="refresh-btn" id="refreshBtn">
+                    <span class="refresh-icon">🔄</span>
+                    Refresh Prices
+                </button>
+                <div class="last-updated">
+                    Last updated: <span id="lastUpdated">Never</span>
+                </div>
+            </div>
+
+            <!-- Surge Pricing Cards -->
+            <section class="services-section">
+                <h2 class="section-title">Current Surge Pricing</h2>
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Service cards will be dynamically generated -->
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section class="map-section">
+                <h2 class="section-title">Your Location</h2>
+                <div class="map-container" id="mapContainer">
+                    <div class="map-placeholder">
+                        <div class="location-marker" id="locationMarker">📍</div>
+                        <div class="surge-zones" id="surgeZones"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Peak Hours Info -->
+            <section class="info-section">
+                <h2 class="section-title">Peak Hours Information</h2>
+                <div class="peak-hours">
+                    <div class="peak-hour-item">
+                        <span class="time-range">7:00-9:00 AM</span>
+                        <span class="description">Morning Rush</span>
+                    </div>
+                    <div class="peak-hour-item">
+                        <span class="time-range">5:00-7:00 PM</span>
+                        <span class="description">Evening Rush</span>
+                    </div>
+                    <div class="peak-hour-item">
+                        <span class="time-range">11:00 PM-2:00 AM</span>
+                        <span class="description">Weekend Nightlife</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Surge History -->
+            <section class="history-section">
+                <h2 class="section-title">Recent Surge History</h2>
+                <div class="surge-history" id="surgeHistory">
+                    <!-- History will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <p>Updating surge prices...</p>
+        </div>
+
+        <!-- Error Modal -->
+        <div class="error-modal" id="errorModal">
+            <div class="error-content">
+                <h3>Location Access Required</h3>
+                <p>Please enable location access to see surge pricing in your area. You can enable it in your browser settings and refresh the page.</p>
+                <button class="btn-primary" onclick="closeErrorModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
